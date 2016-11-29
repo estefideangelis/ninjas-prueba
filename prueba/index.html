@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="jquery-1.12.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="http://www.ajax-cross-domain.com/cgi-bin/ACD/ACD.js?uri=(http://216.92.176.52/?name=john)"></script>
+<script>
+$(document).ready(function(){
+ <!-- cuando el documento este listo sucede el evento ready objeto es el boton, evento clic, se deja sangria para q se entienda el codigo- funcion anonima, dentro contenido
+    $("#traer").click(function(){ <!--antes estaba el nombre de la etiqueta html o sea button pero comoa grego varios le pongo un id al button y o sea traer borrar y le pongo un numeral en vez de "Button" entre paréntesis va "#traer" (lo mismo con el div))-->
+        $.getJSON("http://juego-ninja.tk/prueba/tiempo.php", function(resultados){ 
+			
+            for(i=0; i<resultados.length; i++){
+			$.each(resultados[i], function(i, campo){ <!-- van a entrar dos datos a esta funcion, o sea le doy do parametros i y campo ------ para relacionar con el ecommerce, pongo el link de listaproductos)-->
+                $("#lista").append("<p>"+campo+"</p>"); <!-- que me agregue el dato campo y un espacio en blanco, con el <p> crea un párrafo y crea espacio en blacno uno abajo del otro -->
+            });
+			} <!-- fin bucle for-->
+        });
+    });
+
+
+    $("#borrar").click(function(){ 
+	//vaciar la pantalla
+	$("#lista").empty();
+    });
+}); 
+</script>
+</head>
+<body>
+
+<button id="traer">Traer datos del servidor</button>
+<button id="borrar">Borrar datos</button>
+<div id="lista"></div>
+
+</body>
+</html>
