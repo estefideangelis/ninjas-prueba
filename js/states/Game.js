@@ -281,11 +281,9 @@ ZPlat.GameState = {
    this.fin .fixedToCamera = true;
    this.timer.stop();
    
-this.tiempo=this.timer;
-   localStorage.setItem("tiempo_jugada", tiempo);
-   this.tiempoFinal = localStorage.getItem("tiempo_jugada");
-   alert(this.tiempoFinal);
-  
+   $.post( "http://juego-ninja.tk/tiempo_post.php", { tiempo: this.timer} );  
+   
+   
   /* sessionStorage.setItem("Tiempin", this.timer);
    
    this.tiempoFinal = sessionStorage.getItem("Tiempin");

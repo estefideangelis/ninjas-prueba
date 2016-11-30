@@ -51,7 +51,7 @@
 		// Consulta a la db
 				 
 		$consulta  = "SELECT * FROM usuarios WHERE nombre_usuario = '$usuarioEnviado' and pass_usuario = '$passwordEnviado'";
-		$respuesta = mysqli_query($conexion/*->conectado*/,$consulta);	// Respues de la db con la conexion y la consulta
+		$respuesta = mysqli_query($conexion->conectado,$consulta);	// Respues de la db con la conexion y la consulta
 
 		$matriz = array();					// Array de objetos donde guardo los datos de los usuarios
 		
@@ -62,7 +62,7 @@
 		if ($matriz == null) {
 			// SI EL RESULTADO ES NULL AVISA
 			$resultados["mensaje"] = "Usuario y/o contraseña invalidos";
-			$resultados["validacion"] = "ok";
+			$resultados["validacion"] = "No";
 		
 		} else {
 			// SI EL RESULTADO TRAE DATA, LA PASA Y DA EL OK
