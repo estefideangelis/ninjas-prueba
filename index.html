@@ -42,7 +42,8 @@
             </div>
 
 		</div></center>
-      
+        
+           
           <script>
 		var Jueguin = Jueguin || {};
 
@@ -77,12 +78,13 @@ $(document).ready(function() {
     $aide = localStorage.getItem("id");
 	
 	  function ingreso() {
-		  
-		  	
-      $( "loguin" ).remove();
-		/*  
+		   
+      alert("¡Buena suerte!");
+/*    document.getElementById("loguin").remove();*/
+
+	
 	   document.getElementById("loguin").innerHTML="";
-			*/
+			
       ZPlat.dim = ZPlat.getGameLandscapeDimensions(700, 350);
 
        ZPlat.game = new Phaser.Game(ZPlat.dim.w, ZPlat.dim.h, Phaser.AUTO); // Instancio Phaser y especifico las dimensiones

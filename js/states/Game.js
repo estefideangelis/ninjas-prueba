@@ -197,8 +197,8 @@ ZPlat.GameState = {
     var playerArr = this.findObjectsByType('player', this.map, 'objectsLayer');
     this.player = this.add.sprite(playerArr[0].x, playerArr[0].y, 'player', 3);
     this.player.anchor.setTo(0.5);
-    this.player.animations.add('walking_right', [ 0, 1, 2 ,0 ,1 ,2 ], 6, true);
-	this.player.animations.add('walking_left', [ 3, 4, 5 ,3 ,4 ,5 ], 6, true);
+    this.player.animations.add('walking_right', [ 0, 1, 2, 1,0 , 1, 2, 1 ], 6, true);
+	this.player.animations.add('walking_left', [ 3, 4, 5, 4 , 3, 4, 5, 4 ], 6, true);
     this.game.physics.arcade.enable(this.player);
     this.player.customParams = {};
     this.player.body.collideWorldBounds = true;
@@ -281,9 +281,11 @@ ZPlat.GameState = {
    this.fin .fixedToCamera = true;
    this.timer.stop();
    
-   localStorage.setItem("tiempo_jugada", this.timer);
+this.tiempo=this.timer;
+   localStorage.setItem("tiempo_jugada", tiempo);
    this.tiempoFinal = localStorage.getItem("tiempo_jugada");
    alert(this.tiempoFinal);
+  
   /* sessionStorage.setItem("Tiempin", this.timer);
    
    this.tiempoFinal = sessionStorage.getItem("Tiempin");
@@ -297,8 +299,8 @@ ZPlat.GameState = {
   },
   
    createOnscreenControls: function(){
-    this.leftArrow = this.add.button(20, this.game.height - 60, 'arrowButton');
-    this.rightArrow = this.add.button(110, this.game.height - 60, 'arrowButton');
+     this.leftArrow = this.add.button(20, this.game.height - 60, 'arrowButtonLeft');
+    this.rightArrow = this.add.button(110, this.game.height - 60, 'arrowButtonRight');
     this.actionButton = this.add.button(this.game.width - 100, this.game.height - 60, 'actionButton');
 	
 
