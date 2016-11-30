@@ -281,6 +281,9 @@ ZPlat.GameState = {
    this.fin .fixedToCamera = true;
    this.timer.stop();
    
+   localStorage.setItem("tiempo_jugada", this.timer);
+   this.tiempoFinal = localStorage.getItem("tiempo_jugada");
+   alert(this.tiempoFinal);
   /* sessionStorage.setItem("Tiempin", this.timer);
    
    this.tiempoFinal = sessionStorage.getItem("Tiempin");
@@ -323,7 +326,7 @@ ZPlat.GameState = {
     }, this);
 
     this.leftArrow.events.onInputUp.add(function(){
-      this.player.customParams.isMovingLeft = true;
+      this.player.customParams.isMovingLeft = false;
     }, this);
 
     this.leftArrow.events.onInputOver.add(function(){
